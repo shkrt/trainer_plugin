@@ -186,17 +186,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ahoy_matey
   capybara
   database_cleaner
   factory_girl_rails
-  jquery-rails
   json_matchers
   pg
   poltergeist
   rspec
   rspec-rails
-  sidekiq
   trainer_plugin!
 
 BUNDLED WITH
