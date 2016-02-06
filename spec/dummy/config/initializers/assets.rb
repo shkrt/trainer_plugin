@@ -8,7 +8,8 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( trainer_plugin/bootstrap.css
+Rails.application.config.assets.precompile += %w( trainer_plugin/a.js
+                                                  trainer_plugin/bootstrap.css
                                                   trainer_plugin/d3.js
                                                   trainer_plugin/graph.js
                                                   trainer_plugin/overall.js

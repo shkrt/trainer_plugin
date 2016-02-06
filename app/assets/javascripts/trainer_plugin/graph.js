@@ -2,19 +2,19 @@ var submitBtn = "<button class='btn btn-default' id='report_btn'>Submit</button>
 var userSelect = "#report_user_select"
 var reportTypes = {
   "Activity for all users": {
-    url: "api/v1/summ_act",
+    url: "summ_act",
     req: "GET"
   },
   "Clicks for all users": {
-    url: "api/v1/summ_click",
+    url: "summ_click",
     req: "GET"
   },
   "Clicks for selected user": {
-    url: "api/v1/user_clicks",
+    url: "user_clicks",
     req: "POST"
   },
   "Activity for selected user": {
-    url: "api/v1/user_stats",
+    url: "user_stats",
     req: "POST"
   }
 }

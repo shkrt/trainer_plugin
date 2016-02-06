@@ -1,3 +1,4 @@
+require "rubygems"
 require "jquery-rails"
 require "ahoy_matey"
 module TrainerPlugin
