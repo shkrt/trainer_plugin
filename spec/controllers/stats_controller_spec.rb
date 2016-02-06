@@ -4,7 +4,7 @@ require "json_matchers/rspec"
 module TrainerPlugin
   describe StatsController, type: :controller do
     routes { TrainerPlugin::Engine.routes }
-    let!(:user) { FactoryGirl.create(:user_with_events) }
+    let!(:user) { create(:user_with_events) }
 
     describe "GET stats#activity_summary" do
       it "has a 200 status code" do
