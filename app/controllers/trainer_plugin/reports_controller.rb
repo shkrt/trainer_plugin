@@ -1,4 +1,4 @@
-module TrainerPlugin::Api::V1
+module TrainerPlugin
   class ReportsController < ApplicationController
     def main
       @users = User.all

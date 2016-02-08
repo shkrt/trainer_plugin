@@ -1,4 +1,4 @@
-module TrainerPlugin::Api::V1
+module TrainerPlugin
   class StatsController < ApplicationController
     def user_stats
       render json: (get_activities(User.find(params[:user_id])))
