@@ -4,7 +4,7 @@
 
 - Put this in your Gemfile
 
-`gem "trainer_plugin", git: "https://github.com/Shkrt/trainer_plugin.git", branch: "engine", ref: "a0b98c2"`
+`gem "trainer_plugin", git: "https://github.com/Shkrt/trainer_plugin.git", branch: "engine"`
 and then run `bundle install`
 - Generate ahoy stores
 
@@ -39,4 +39,4 @@ Logging of all page views processed by default.
 
 Sidekiq worker must be launched for tracking to work!
 
-Open the main page of engine at the mount point (e.g. `127.0.0.1:3000/stats`), and choose type of report and parameters, if applicable. The report graph will be generated on the same page.
+Open the main page of engine at the mount point plus "info" (e.g. `127.0.0.1:3000/stats/info`), and choose type of report and parameters, if applicable. The report graph will be generated on the same page.
