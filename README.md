@@ -5,38 +5,40 @@
 - Put this in your Gemfile
 
 `gem "trainer_plugin", git: "https://github.com/Shkrt/trainer_plugin.git", branch: "engine"`
-and then run `bundle install`
+
+and then run
+
+`bundle install`
+
 - Generate ahoy stores
 
 `rails generate ahoy:stores:active_record -d postgresql`
 
 ` rake db:migrate`
 
-- Mount engine:
-
-`mount TrainerPlugin::Engine => "/stats"`
-
-- Bind your User model like this:
-
-`has_many :ahoy_events, class_name: "Ahoy::Event"`
-
 - In your ApplicationController:
 
 `include TrainerPlugin`
 
-- Generate initializer:
+- Run settings generator:
 
-`rails g binding trainer_plugin`
+`rails g settings trainer_plugin`
 
-In newly generated config/initializers/trainer_plugin.rb, customize string representation of your User/Profile/Account model
+This will mount the engine and generate `config/initializers/trainer_plugin.rb`.
+
+In newly generated `config/initializers/trainer_plugin.rb`, customize string representation of your `User/Profile/Account` etc. model
 
 ```ruby
 TrainerPlugin.configure do |config|
   config.user_class = "User"
+  #config.user_class = "Profile"
+  #config.user_class = "Account"
 end
 ```
 
-- In app's application.rb file set up background processing adapters (redis-rails is distributed with the gem)
+- In app's application.rb file set up background processing adapters (redis-rails is shipped with the gem)
+
+If these variables are not set, jobs will be processed immediately.
 
 ```ruby
 config.active_job.queue_adapter = :sidekiq

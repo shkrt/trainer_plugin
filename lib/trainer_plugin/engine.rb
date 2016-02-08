@@ -11,5 +11,13 @@ module TrainerPlugin
       g.assets false
       g.helper false
     end
+
+    config.to_prepare do
+      if TrainerPlugin.config
+        TrainerPlugin.config.user_class.constantize.class_eval do
+          has_many :ahoy_events, class_name: "Ahoy::Event"
+        end
+      end
+    end
   end
 end
