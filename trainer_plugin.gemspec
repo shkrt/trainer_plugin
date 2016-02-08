@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "ahoy_matey"
   s.add_dependency "sidekiq"
   s.add_dependency "jquery-rails"
+  s.add_dependency "redis-rails"
 
   s.add_development_dependency "pg"
   s.add_development_dependency "rspec"
