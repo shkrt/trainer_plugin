@@ -24,6 +24,27 @@ and then run `bundle install`
 
 `include TrainerPlugin`
 
+- In config/initializers/trainer_plugin.rb, define string representation of your User/Profile/Account model
+
+```ruby
+TrainerPlugin.configure do |config|
+  config.user_class = "User"
+end
+```
+
+- In app's application.rb file set up background processing adapters (redis-rails is distributed with the gem)
+
+```ruby
+config.active_job.queue_adapter = :sidekiq
+config.cache_store = :redis_store, "redis://localhost:6379/0/cache"
+```
+- In application.js:
+
+```javascript
+//= require ahoy
+ahoy.trackView()
+```
+
 
 ## Usage
 
@@ -35,8 +56,6 @@ def index
 end
 ```
 
-Logging of all page views processed by default.
+Sidekiq worker must be launched for action tracking to work!
 
-Sidekiq worker must be launched for tracking to work!
-
-Open the main page of engine at the mount point plus "info" (e.g. `127.0.0.1:3000/stats/info`), and choose type of report and parameters, if applicable. The report graph will be generated on the same page.
+Open the main page of engine at the mount point (e.g. `127.0.0.1:3000/stats/`), and choose type of report and parameters, if applicable. The report graph will be generated on the same page.
