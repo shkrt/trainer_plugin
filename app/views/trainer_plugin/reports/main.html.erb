@@ -9,7 +9,7 @@
   </div>
   <div class="form-group" id="report_user_select">
     <%= label_tag "", "Choose user from dropdown" %>
-    <%= select_tag :user_id, options_from_collection_for_select(@users, :id, :email), class: "form-control" %>
+    <%= select_tag @user_key, options_from_collection_for_select(@users, :id, :email), class: "form-control" %>
   </div>
 <% end %>
 </div>
