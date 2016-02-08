@@ -24,7 +24,11 @@ and then run `bundle install`
 
 `include TrainerPlugin`
 
-- In config/initializers/trainer_plugin.rb, define string representation of your User/Profile/Account model
+- Generate initializer:
+
+`rails g binding trainer_plugin`
+
+In newly generated config/initializers/trainer_plugin.rb, customize string representation of your User/Profile/Account model
 
 ```ruby
 TrainerPlugin.configure do |config|

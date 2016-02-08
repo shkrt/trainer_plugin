@@ -1,5 +1,7 @@
-class BindingGenerator < Rails::Generators::Base
-  def create_initializer_file
-    create_file "config/initializers/trainer_plugin.rb"
+class BindingGenerator < Rails::Generators::NamedBase
+  source_root File.expand_path("../templates", __FILE__)
+
+  def copy_initializer_file
+    copy_file "binding.rb", "config/initializers/#{file_name}.rb"
   end
 end
