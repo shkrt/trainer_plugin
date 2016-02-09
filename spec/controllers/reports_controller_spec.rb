@@ -1,6 +1,6 @@
 require "spec_helper"
 
-module TrainerPlugin
+module TrainerPlugin::Api
   describe ReportsController, type: :controller do
     routes { TrainerPlugin::Engine.routes }
     let!(:user) { FactoryGirl.create(:user) }

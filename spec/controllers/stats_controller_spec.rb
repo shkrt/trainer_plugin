@@ -1,7 +1,7 @@
 require "spec_helper"
 require "json_matchers/rspec"
 
-module TrainerPlugin
+module TrainerPlugin::Api
   describe StatsController, type: :controller do
     routes { TrainerPlugin::Engine.routes }
     let!(:user) { create(:user_with_events) }
