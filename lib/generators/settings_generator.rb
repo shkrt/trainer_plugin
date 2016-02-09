@@ -28,6 +28,11 @@ class SettingsGenerator < Rails::Generators::NamedBase
       "db/migrate/create_visits.rb"
   end
 
+  def generate_events_migration
+    migration_template "active_record_events_migration.rb",
+      "db/migrate/create_events.rb"
+  end
+
   def user_class
     ":#{user.downcase}_id"
   end
