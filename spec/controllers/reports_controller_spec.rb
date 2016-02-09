@@ -3,7 +3,7 @@ require "spec_helper"
 module TrainerPlugin::Api
   describe ReportsController, type: :controller do
     routes { TrainerPlugin::Engine.routes }
-    let!(:user) { FactoryGirl.create(:user) }
+    let!(:user) { create(:user) }
 
     before do
       TrainerPlugin.configure do |config|

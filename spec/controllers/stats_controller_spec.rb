@@ -6,6 +6,12 @@ module TrainerPlugin::Api
     routes { TrainerPlugin::Engine.routes }
     let!(:user) { create(:user_with_events) }
 
+    before do
+      TrainerPlugin.configure do |config|
+        config.user_class = "User"
+      end
+    end
+
     describe "GET stats#activity_summary" do
       it "has a 200 status code" do
         get :activity_summary
