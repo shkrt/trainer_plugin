@@ -5,6 +5,12 @@ module TrainerPlugin
     routes { TrainerPlugin::Engine.routes }
     let!(:user) { FactoryGirl.create(:user) }
 
+    before do
+      TrainerPlugin.configure do |config|
+        config.user_class = "User"
+      end
+    end
+
     describe "GET reports#main" do
       it "has a 200 status code" do
         get :main
