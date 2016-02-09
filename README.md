@@ -16,6 +16,8 @@ and then run
 
 ` rake db:migrate`
 
+- The user class should have fields "id" and "email"
+
 - In your ApplicationController:
 
 `include TrainerPlugin`
