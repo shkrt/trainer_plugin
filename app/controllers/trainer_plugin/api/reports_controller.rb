@@ -1,5 +1,5 @@
 module TrainerPlugin::Api
-  class ReportsController < ApplicationController
+  class ReportsController < TrainerPlugin::ApplicationController
     def main
       @users = TrainerPlugin.config.user_class.constantize.all
       @user_key = "#{TrainerPlugin.config.user_class.downcase}_id".to_sym

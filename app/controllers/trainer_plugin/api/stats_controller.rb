@@ -1,22 +1,24 @@
 module TrainerPlugin::Api
-  class StatsController < ::ApplicationController
+  class StatsController < TrainerPlugin::ApplicationController
+    @@usr_class = TrainerPlugin.config.user_class.constantize
+
     def user_stats
-      render json: (get_activities(User.find(params[:user_id])))
+      render json: (get_activities(@@usr_class.find(params[:user_id])))
     end
 
     def user_clicks
-      render json: (get_clicks(User.find(params[:user_id])))
+      render json: (get_clicks(@@usr_class.find(params[:user_id])))
     end
 
     def activity_summary
       summ = {}
-      User.all.each { |u| summ[u.email] = get_activities(u) }
+      @@usr_class.all.each { |u| summ[u.email] = get_activities(u) }
       render json: summ
     end
 
     def clicks_summary
       summ = {}
-      User.all.each { |u| summ[u.email] = get_clicks(u) }
+      @@usr_class.all.each { |u| summ[u.email] = get_clicks(u) }
       render json: summ
     end
 
