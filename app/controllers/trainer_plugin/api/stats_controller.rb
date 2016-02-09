@@ -1,4 +1,4 @@
-module TrainerPlugin
+module TrainerPlugin::Api
   class StatsController < ApplicationController
     def user_stats
       render json: (get_activities(User.find(params[:user_id])))
@@ -9,13 +9,13 @@ module TrainerPlugin
     end
 
     def activity_summary
-      summ = Hash.new 0
+      summ = {}
       User.all.each { |u| summ[u.email] = get_activities(u) }
       render json: summ
     end
 
     def clicks_summary
-      summ = Hash.new 0
+      summ = {}
       User.all.each { |u| summ[u.email] = get_clicks(u) }
       render json: summ
     end

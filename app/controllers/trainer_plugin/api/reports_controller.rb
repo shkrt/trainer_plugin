@@ -1,4 +1,4 @@
-module TrainerPlugin
+module TrainerPlugin::Api
   class ReportsController < ApplicationController
     def main
       @users = TrainerPlugin.config.user_class.constantize.all
