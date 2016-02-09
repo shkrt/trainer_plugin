@@ -17,6 +17,18 @@ class SettingsGenerator < Rails::Generators::NamedBase
     copy_file "initializer.rb", "config/initializers/#{file_name}.rb"
   end
 
+  def copy_ahoy_initializer
+    copy_file "ahoy_initializer.rb", "config/initializers/ahoy.rb"
+  end
+
+  def copy_visit_model
+    template "active_record_visit_model.rb", "app/models/visit.rb"
+  end
+
+  def copy_event_model
+    template "active_record_event_model.rb", "app/models/ahoy/event.rb"
+  end
+
   def insert_routes
     inject_into_file "config/routes.rb",
       "  mount TrainerPlugin::Engine => '/stats'\n",
@@ -35,5 +47,9 @@ class SettingsGenerator < Rails::Generators::NamedBase
 
   def user_class
     ":#{user.downcase}_id"
+  end
+
+  def user_short
+    ":#{user.downcase}"
   end
 end

@@ -10,25 +10,21 @@ and then run
 
 `bundle install`
 
-- Generate ahoy stores
+- Run generators
 
-`rails generate ahoy:stores:active_record -d postgresql`
+`rails g settings trainer_plugin User`
 
-` rake db:migrate`
+where last parameter "User" should match your exact user class, e.g Profile or some other. The corresponding database table of your user class also should have fields :id and :email
 
-- The user class should have fields "id" and "email"
+- Run migrations
+
+`rake db:migrate`
 
 - In your ApplicationController:
 
 `include TrainerPlugin`
 
-- Run settings generator:
-
-`rails g settings trainer_plugin`
-
-This will mount the engine and generate `config/initializers/trainer_plugin.rb`.
-
-In newly generated `config/initializers/trainer_plugin.rb`, customize string representation of your `User/Profile/Account` etc. model
+- In newly generated `config/initializers/trainer_plugin.rb`, customize string representation of your `User/Profile/Account` etc. model
 
 ```ruby
 TrainerPlugin.configure do |config|
@@ -52,7 +48,6 @@ config.cache_store = :redis_store, "redis://localhost:6379/0/cache"
 //= require ahoy
 ahoy.trackView()
 ```
-
 
 ## Usage
 
