@@ -1,20 +1,25 @@
+var summActPath = "<%= TrainerPlugin::Engine.routes.url_helpers.summ_act_path %>"
+var summClickPath = "<%= TrainerPlugin::Engine.routes.url_helpers.summ_click_path %>"
+var userClicksPath = "<%= TrainerPlugin::Engine.routes.url_helpers.user_clicks_path %>"
+var userStatsPath = "<%= TrainerPlugin::Engine.routes.url_helpers.user_stats_path %>"
+
 var submitBtn = "<button class='btn btn-default' id='report_btn'>Submit</button>";
 var userSelect = "#report_user_select"
 var reportTypes = {
   "Activity for all users": {
-    url: "summ_act",
+    url: summActPath,
     req: "GET"
   },
   "Clicks for all users": {
-    url: "summ_click",
+    url: summClickPath,
     req: "GET"
   },
   "Clicks for selected user": {
-    url: "user_clicks",
+    url: userClicksPath,
     req: "POST"
   },
   "Activity for selected user": {
-    url: "user_stats",
+    url: userStatsPath,
     req: "POST"
   }
 }
