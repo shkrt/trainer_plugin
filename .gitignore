@@ -1,0 +1,8 @@
+.bundle/
+log/*.log
+pkg/
+spec/dummy/log/
+spec/dummy/tmp/
+spec/dummy/config/database.yml
+spec/dummy/.sass-cache
+.git/
