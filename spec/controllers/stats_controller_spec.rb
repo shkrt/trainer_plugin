@@ -5,7 +5,6 @@ module TrainerPlugin::Api
   describe StatsController, type: :controller do
     routes { TrainerPlugin::Engine.routes }
 
-
     before do
       TrainerPlugin.configure do |config|
         config.user_class = "User"

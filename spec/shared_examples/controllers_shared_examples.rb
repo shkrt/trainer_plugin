@@ -20,8 +20,8 @@ module TrainerPlugin
   end
 
   RSpec.shared_context "not authenticated" do
-    it "redirects to login page" do
-      expect(response).to redirect_to(Rails.application.routes.url_helpers.root_path)
+    it "response has status 401" do
+      expect(response.status).to eq(401)
     end
   end
 end

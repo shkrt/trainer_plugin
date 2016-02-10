@@ -4,11 +4,11 @@ module TrainerPlugin
       before_filter :set_procs
 
       def user_stats
-        render json: (get_activities(@user_class.find(params[:user_id])))
+        render json: @get_activities.call(@user_class.find(params[:user_id]))
       end
 
       def user_clicks
-        render json: (get_clicks(@user_class.find(params[:user_id])))
+        render json: @get_clicks.call(@user_class.find(params[:user_id]))
       end
 
       def activity_summary

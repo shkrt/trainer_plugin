@@ -11,7 +11,7 @@ module TrainerPlugin
     end
 
     def authenticate
-      redirect_to main_app.root_path unless current_user
+      render nothing: true, status: :unauthorized unless current_user
     end
   end
 end
