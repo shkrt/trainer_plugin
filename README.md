@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/Shkrt/trainer_plugin.svg?branch=engine)](https://travis-ci.org/Shkrt/trainer_plugin)
 
+[![Code Climate](https://codeclimate.com/github/Shkrt/trainer_plugin/badges/gpa.svg)](https://codeclimate.com/github/Shkrt/trainer_plugin)
+
+[![Test Coverage](https://codeclimate.com/github/Shkrt/trainer_plugin/badges/coverage.svg)](https://codeclimate.com/github/Shkrt/trainer_plugin/coverage)
+
 ## Installation
 
 - Put this in your Gemfile
@@ -14,7 +18,7 @@ and then run
 
 `rails g settings trainer_plugin User`
 
-where last parameter "User" should match your exact user class, e.g Profile or some other. The corresponding database table of your user class also should have fields :id and :email
+where last parameter "User" should match your exact user class, e.g Profile or some other. The corresponding database table of your user class also should have fields :id and :email. Current user method should be named "current_user".
 
 - Run migrations
 
