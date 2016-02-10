@@ -50,4 +50,6 @@ end
 
 Sidekiq worker must be launched for action tracking to work!
 
+Page views(not clicks!) would be tracked by default.
+
 Open the main page of engine at the mount point (e.g. `127.0.0.1:3000/stats/`), and choose type of report and parameters, if applicable. The report graph will be generated on the same page.
