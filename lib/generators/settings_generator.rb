@@ -58,7 +58,7 @@ class SettingsGenerator < Rails::Generators::NamedBase
     if File.exist?(file)
       append_to_file file, "//=require ahoy\nahoy.trackView();"
     else
-      puts "#{file} was not found"
+      logger.info("#{file} was not found")
     end
   end
 
@@ -68,7 +68,7 @@ class SettingsGenerator < Rails::Generators::NamedBase
       inject_into_file file, "include TrainerPlugin\n",
         after: /^class ApplicationController.*\n/
     else
-      puts "#{file} was not found"
+      logger.info("#{file} was not found")
     end
   end
 
