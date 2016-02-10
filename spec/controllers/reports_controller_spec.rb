@@ -1,9 +1,9 @@
 require "spec_helper"
+require "shared_examples/controllers_shared_examples"
 
 module TrainerPlugin::Api
   describe ReportsController, type: :controller do
     routes { TrainerPlugin::Engine.routes }
-    let!(:user) { create(:user) }
 
     before do
       TrainerPlugin.configure do |config|
@@ -11,15 +11,21 @@ module TrainerPlugin::Api
       end
     end
 
-    describe "GET reports#main" do
-      it "has a 200 status code" do
-        get :main
-        expect(response.status).to eq(200)
+    context "non-authenticated access" do
+      before { allow(controller).to receive(:current_user) { nil } }
+      describe "GET reports#main" do
+        before { get :main }
+        it_behaves_like "not authenticated"
       end
+    end
 
-      it "responds to html get by default" do
-        get :main
-        expect(response.content_type).to eq "text/html"
+    context "authenticated access" do
+      let!(:user) { create(:user) }
+      before { allow(controller).to receive(:current_user) { user } }
+
+      describe "GET reports#main" do
+        before { get :main }
+        it_behaves_like "authenticated with html response"
       end
     end
   end
