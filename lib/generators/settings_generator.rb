@@ -52,4 +52,28 @@ class SettingsGenerator < Rails::Generators::NamedBase
   def user_short
     ":#{user.downcase}"
   end
+
+  def insert_js
+    file = "app/assets/javascripts/application.js"
+    if File.exist?(file)
+      append_to_file file, "//=require ahoy\nahoy.trackView();"
+    else
+      puts "#{file} was not found"
+    end
+  end
+
+  def insert_include
+    file = "app/controllers/application_controller.rb"
+    if File.exist?(file)
+      inject_into_file file, "include TrainerPlugin\n",
+        after: /^class ApplicationController.*\n/
+    else
+      puts "#{file} was not found"
+    end
+  end
+
+  def configure_app
+    application "config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'"
+    application "config.active_job.queue_adapter = :sidekiq"
+  end
 end

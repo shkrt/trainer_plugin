@@ -20,11 +20,7 @@ where last parameter "User" should match your exact user class, e.g Profile or s
 
 `rake db:migrate`
 
-- In your ApplicationController:
-
-`include TrainerPlugin`
-
-- In newly generated `config/initializers/trainer_plugin.rb`, customize string representation of your `User/Profile/Account` etc. model
+- In newly generated `config/initializers/trainer_plugin.rb`, enter string representation of your `User/Profile/Account` etc. model. You should enter exactly the same string that you passed as last argument to generator.
 
 ```ruby
 TrainerPlugin.configure do |config|
@@ -34,21 +30,14 @@ TrainerPlugin.configure do |config|
 end
 ```
 
-- In app's application.rb file set up background processing adapters (redis-rails is shipped with the gem)
-
-If these variables are not set, jobs will be processed immediately.
+- Generators should have added these options to config/application.rb:
 
 ```ruby
 config.active_job.queue_adapter = :sidekiq
 config.cache_store = :redis_store, "redis://localhost:6379/0/cache"
 ```
-- In application.js:
 
-```javascript
-//= require ahoy
-ahoy.trackView()
-```
-
+Customize this according to your setup. Redis-rails is shipped with the gem. If these variables are not set, jobs will be processed immediately.
 ## Usage
 
 Call `track` method from any of your controller actions, passing it some message and user id:
