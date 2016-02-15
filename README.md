@@ -1,7 +1,5 @@
 [![Build Status](https://travis-ci.org/Shkrt/trainer_plugin.svg?branch=engine)](https://travis-ci.org/Shkrt/trainer_plugin)
-
 [![Code Climate](https://codeclimate.com/github/Shkrt/trainer_plugin/badges/gpa.svg)](https://codeclimate.com/github/Shkrt/trainer_plugin)
-
 [![Test Coverage](https://codeclimate.com/github/Shkrt/trainer_plugin/badges/coverage.svg)](https://codeclimate.com/github/Shkrt/trainer_plugin/coverage)
 
 ## Installation
@@ -57,3 +55,5 @@ Sidekiq worker must be launched for action tracking to work!
 Page views(not clicks!) would be tracked by default.
 
 Open the main page of engine at the mount point (e.g. `127.0.0.1:3000/stats/`), and choose type of report and parameters, if applicable. The report graph will be generated on the same page.
+
+![alt text](https://github.com/Shkrt/trainer_plugin/raw/master/stats.png "Output example")

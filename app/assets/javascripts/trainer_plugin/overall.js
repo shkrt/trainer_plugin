@@ -1,15 +1,15 @@
 function OverallReport(data, dmn) {
   var margin = {
       top: 60,
-      right: 0,
+      right: 100,
       bottom: 30,
-      left: 240
+      left: 140
     },
-    width = 960 - margin.left - margin.right,
+    width = 1230 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
   var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .1);
+    .rangeRoundBands([10, width], .1);
 
   var y = d3.scale.linear()
     .rangeRound([height, 0]);
@@ -112,7 +112,7 @@ function OverallReport(data, dmn) {
     .enter().append("g")
     .attr("class", "legend")
     .attr("transform", function(d, i) {
-      return "translate(0," + i * 20 + ")";
+      return "translate(90," + i * 20 + ")";
     });
 
   legend.append("rect")
