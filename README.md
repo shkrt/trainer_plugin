@@ -6,7 +6,7 @@
 
 - Put this in your Gemfile
 
-`gem "trainer_plugin", git: "https://github.com/Shkrt/trainer_plugin.git", branch: "engine"`
+`gem "trainer_plugin", git: "https://github.com/Shkrt/trainer_plugin.git"`
 
 and then run
 
