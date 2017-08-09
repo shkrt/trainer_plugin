@@ -24,12 +24,12 @@ module TrainerPlugin::Api
       end
 
       describe "POST stats#user_clicks" do
-        before { post :user_clicks, user_id: 1 }
+        before { post :user_clicks, params: { user_id: 1 } }
         it_behaves_like "not authenticated"
       end
 
       describe "POST stats#user_stats" do
-        before { post :user_stats, user_id: 1 }
+        before { post :user_stats, params: { user_id: 1 } }
         it_behaves_like "not authenticated"
       end
     end
@@ -59,21 +59,21 @@ module TrainerPlugin::Api
       end
 
       describe "POST stats#user_clicks" do
-        before { post :user_clicks, user_id: user.id }
+        before { post :user_clicks, params: { user_id: user.id } }
         it_behaves_like "authenticated with json response"
 
         it "response matches json schema" do
-          post :user_stats, user_id: user.id
+          post :user_stats, params: { user_id: user.id }
           expect(response).to match_response_schema("user_stats")
         end
       end
 
       describe "POST stats#user_stats" do
-        before { post :user_stats, user_id: user.id }
+        before { post :user_stats, params: { user_id: user.id } }
         it_behaves_like "authenticated with json response"
 
         it "response matches json schema" do
-          post :user_stats, user_id: user.id
+          post :user_stats, params: { user_id: user.id }
           expect(response).to match_response_schema("user_stats")
         end
       end

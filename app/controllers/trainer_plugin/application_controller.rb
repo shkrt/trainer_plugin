@@ -1,7 +1,7 @@
 module TrainerPlugin
   class ApplicationController < ActionController::Base
     include ActionController::HttpAuthentication::Basic::ControllerMethods
-    before_filter :set_user_class, :authenticate
+    before_action :set_user_class, :authenticate
     layout "trainer_plugin/application"
 
     private
@@ -11,7 +11,7 @@ module TrainerPlugin
     end
 
     def authenticate
-      render nothing: true, status: :unauthorized unless current_user
+      return head 401 unless current_user
     end
   end
 end
