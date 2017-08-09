@@ -1,7 +1,7 @@
 module TrainerPlugin
   module Api
     class StatsController < TrainerPlugin::ApplicationController
-      before_filter :set_procs
+      before_action :set_procs
 
       def user_stats
         render json: @get_activities.call(@user_class.find(params[:user_id]))
