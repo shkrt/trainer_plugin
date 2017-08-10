@@ -2,7 +2,7 @@ module TrainerPlugin
   class ApplicationController < ActionController::Base
     include ActionController::HttpAuthentication::Basic::ControllerMethods
     before_action :set_user_class, :authenticate
-    layout "trainer_plugin/application"
+    layout 'trainer_plugin/application'
 
     private
 
