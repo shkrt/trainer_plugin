@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TrainerPlugin
   class AhoyTrackJob < ActiveJob::Base
     queue_as :default
