@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TrainerPlugin
   class ApplicationController < ActionController::Base
     include ActionController::HttpAuthentication::Basic::ControllerMethods

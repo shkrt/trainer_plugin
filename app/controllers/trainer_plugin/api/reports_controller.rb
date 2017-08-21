@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TrainerPlugin::Api
   class ReportsController < TrainerPlugin::ApplicationController
     def main
