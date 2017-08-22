@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if Rails.env.test?
   require 'ahoy/stores/base_store'
   require 'ahoy/stores/active_record_store'

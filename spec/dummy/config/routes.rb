@@ -1,7 +1,9 @@
-Rails.application.routes.draw do
-  root to: "test#index"
-  get "test/index"
-  get "test/page"
+# frozen_string_literal: true
 
-  mount TrainerPlugin::Engine => "/stats"
+Rails.application.routes.draw do
+  root to: 'test#index'
+  get 'test/index'
+  get 'test/page'
+
+  mount TrainerPlugin::Engine => '/stats'
 end
