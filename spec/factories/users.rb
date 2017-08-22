@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryGirl.define do
   factory :user do
-    email "test@test.com"
-    password_digest "12345"
+    email 'test@test.com'
+    password_digest '12345'
 
     factory :user_with_events do
       after(:create) do |user|
