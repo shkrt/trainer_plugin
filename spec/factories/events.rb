@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :event, class: Ahoy::Event do
     time Time.now
     properties {}
