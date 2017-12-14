@@ -1,14 +1,21 @@
 language: ruby
 rvm: 2.2.3
-env: RAILS_ENV=test
+env:
+  global
+    - CC_TEST_REPORTER_ID=8fc89b1ca27e78dc3d926aa4ef9156ab47acaa7279e9e8291e3ccbee1c930d19
 script:
   - bundle exec rspec
 addons:
   postgresql: "9.3"
 before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
   - cp spec/dummy/config/database.yml.travis spec/dummy/config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
   - bundle exec rake db:migrate
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 install: bundle install --jobs=3 --retry=3
 services:
   - redis-server
