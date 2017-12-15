@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/Shkrt/trainer_plugin.svg?branch=engine)](https://travis-ci.org/Shkrt/trainer_plugin)
 [![Code Climate](https://codeclimate.com/github/Shkrt/trainer_plugin/badges/gpa.svg)](https://codeclimate.com/github/Shkrt/trainer_plugin)
-[![Test Coverage](https://codeclimate.com/github/Shkrt/trainer_plugin/badges/coverage.svg)](https://codeclimate.com/github/Shkrt/trainer_plugin/coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a8eddc8ef82681debd42/test_coverage)](https://codeclimate.com/github/Shkrt/trainer_plugin/test_coverage)
 
 ## Installation
 
